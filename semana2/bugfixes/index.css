@@ -19,6 +19,8 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border: none;
+    border-bottom: 1px solid black;
 }
 
 button:focus {
@@ -68,7 +70,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-    padding-top: 10vh;
+    padding-top: 12vh;
 }
 
 #container-de-descricao>ol {
