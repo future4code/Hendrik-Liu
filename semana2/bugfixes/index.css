@@ -10,6 +10,10 @@
     font-family: 'Roboto';
 }
 
+button {
+    outline: none;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -34,7 +38,7 @@ img {
 }
 
 div img {
-    background: black;
+    background: white;
 }
 
 .botao-amarelo {
@@ -45,10 +49,25 @@ div img {
     font-size: 14px;
     color: white;
     text-align: center;
+
 }
 
 .botao-amarelo:hover {
     background-color: #c44f00;
+}
+
+.container {
+    height: 200px;
+    position: relative;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .container {
@@ -59,6 +78,14 @@ div img {
 .icone {
     width: 2vw;
     height: auto;
+}
+
+.icone:hover {
+    opacity: 0.5;
+}
+
+.icone:active {
+    opacity: 1;
 }
 
 
