@@ -88,6 +88,9 @@ div img {
     font-size: 60px;
 }
 
+ol.a {
+    list-style-position: inside;
+}
 
 /**
   *
@@ -118,7 +121,6 @@ td button {
     margin-top: 20px;
     height: 100px;
 }
-
 
 #back-button {
     background-color: white;
