@@ -1,7 +1,6 @@
 body {
-    width: 100vw;
+    max-width: 100vw;
     padding: 0;
-    margin: 0;
     font-family: 'Helvetica Neue', sans-serif;  
 }
 
@@ -19,15 +18,12 @@ div {
     align-items: center;
     justify-items: center;
     border: none;
-    row-gap: 5px;
-    column-gap: 5px;
 }
 
 footer {
     background-color: #eaeaea;
     text-align: center;
     font-size: 1.5vw;
-    bottom:0;
 }
 
 section{
@@ -54,14 +50,8 @@ section{
 }
 
 .img {
-    width: 75%;
-    height: 60%;
-    padding: 25px;
-}
-
-.video {
-    width: 85%;
-    height: 60%;
+    width: 280px;
+    height: 180px; 
 }
 
 .logo {
@@ -70,32 +60,54 @@ section{
 
 .grid-container {
     height: 70vh;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    justify-items: stretch;
+    justify-items: center;
     align-items: stretch;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: 8fr;
-        justify-items: stretch;
-        align-items: stretch;
         border: none;
     }
 
     .vid1 {
-        grid-row: 1/2;
+        margin: 0 10px;
     }
     
     .vid2 {
-        grid-row: 2/3;
+        margin: 0 10px;
     }
     
     .vid3 {
-        grid-row: 3/4;
+        margin: 0 10px;
     }
 
+    .vid4 {
+        margin: 0 10px;
+    }
+
+    .vid5 {
+        margin: 0 10px;
+    }
+
+    .vid6 {
+        margin: 0 10px;
+    }
+
+    .vid7 {
+        margin: 0 10px;
+    }
+
+    .vid8 {
+        margin: 0 10px;
+    }
+
+    footer {
+        display: none;
+    }
 }
