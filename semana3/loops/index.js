@@ -108,3 +108,26 @@ while (numeroEscolhido != numeroChutado){
 console.log('Acertou!')
 console.log(`O número de tentativas foi: ${tentativas}`)
 */
+
+/*
+DESAFIO 3
+
+let tentativas = 0;
+const numeroEscolhido = Math.floor((Math.random() * 100) + 1);
+console.log("Vamos jogar!")
+let numeroChutado = Math.floor((Math.random() * 100) + 1);
+
+while (numeroEscolhido != numeroChutado){
+    if(numeroChutado < numeroEscolhido){
+        console.log(`O número chutado foi: ${numeroChutado}`)
+        console.log('Errou. O número escolhido é maior')
+    } else {
+        console.log(`O número chutado foi ${numeroChutado}`)
+        console.log('Errou. O número escolhido é menor')
+    }
+    tentativas++
+    numeroChutado = Math.floor((Math.random() * 100) + 1);
+}
+console.log('Acertou!')
+console.log(`O número de tentativas foi: ${tentativas}`)
+*/
