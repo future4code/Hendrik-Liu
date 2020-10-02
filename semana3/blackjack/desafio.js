@@ -1,16 +1,3 @@
-/**
- * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
- * 
- * 
-    const carta = comprarCarta(); // Sorteia uma carta. Por exemplo, o rei de ouros
-    
-    console.log(carta.texto) // imprime o texto da carta. Exemplo: "K♦️" (indica "K" de ouros)
-    console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
- * 
- * 
- * 
- */
-/*
 let player1 = []
 let player2 = []
 
@@ -44,18 +31,3 @@ if (confirm("Quer iniciar uma nova rodada?")){
       player2.push(p1C2)
    } 
 }
-*/
-
-   
-
-
-
-/*
-   //1a Rodada
-   while (confirm("Suas cartas são " + player1[0].texto + " " + player1[1].texto + ". A carta revelada do computador é " + player2[0].texto + ". Deseja comprar mais uma carta?")
-      player1.push = comprarCarta()
-      let total
-      for (let cartas in player1){
-         totalP1 = totalP1 + player1.valor[i];
-      }
-*/
