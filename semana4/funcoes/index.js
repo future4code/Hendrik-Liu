@@ -166,3 +166,64 @@ let soma = (num1, num2) => {
 }
 soma(1, 2)
 */
+
+/*
+//2.a
+const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+function parX2 (array){
+    let newArray = []
+    for(let i=0; i < array.length; i++){
+        if(Number(array[i] % 2 === 0)){
+            newArray.push(array[i]*2)
+        } 
+    }
+    return newArray;
+}
+console.log(parX2(numeros))
+*/
+
+/*
+//b
+const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+function maiorNum (array){
+    let maior = array[0]
+    for (let i=0; i < array.length; i++) {
+        if(maior < array[i]){
+            maior = array[i]
+        }
+    }    
+    return maior
+}
+console.log(maiorNum(numeros))
+*/
+
+/*
+//c
+const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+function maiorNum (array){
+    let maior = array[0]
+    let indice
+    for (let i=0; i < array.length; i++) {
+        if(maior < array[i]){
+            maior = array[i]
+            indice = i;
+        }
+    }    
+    return indice
+}
+console.log(maiorNum(numeros))
+*/
+
+/*
+//D
+const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+
+function arrInvertido (array){
+    newArray = []
+    for(i=array.length-1; i>=0; i--){
+        newArray.push(array[i]);
+    }
+    return newArray
+}
+console.log(arrInvertido(numeros))
+*/
