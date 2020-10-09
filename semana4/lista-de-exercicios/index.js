@@ -116,24 +116,30 @@
 
 //Exercícios de Funções
 //1
-const array = [10, 20, 30, 40, 50, 100]
+// const array = [10, 20, 30, 70, 40, 50, 100, 60, 90, 80]
 
-let max = array[0]
-let max2 = array[0]
+// let primeiro = array[0] 
+// let segundo = array[0]
 
-function exercicio1 (array){
-    for(let i=0; i<array.length; i++){
-        if (max < array[i]){
-            max = array[i]
-        } 
-    
-        if ( max2 < array[i] && max2 < max){
-            max2 = array[i]
-        }
-    }
-    return max2
-}
-console.log(exercicio1(array))
+// function exercicio1 (array){
+//     for(let i=0; i<array.length; i++){
+//         if (array[i] > primeiro){
+//             segundo = primeiro
+//             primeiro = array[i]
+//         } else if (array[i] > segundo) {
+//             segundo = array[i]
+//         }
+//     }
+//     return segundo
+// }
+// console.log(exercicio1(array))
+
+//2
+// let exercicio2 = () => {
+//     alert("Hello Future4")
+// }
+
+// exercicio2();
 
 
 
