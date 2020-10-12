@@ -25,7 +25,9 @@
 // Imprime: 8
 
 //4
-// O programa é um laço que percorre o array numeros e para cada elemento, faz uma comparação se o elemento é menor que o numero1 e outra comparação se o elemento é maior que o numero2. 
+// O programa é um laço que percorre o array numeros e para cada elemento, faz uma comparação se o elemento é menor que o numero1 e outra comparação se o elemento é maior que o numero2. Resumundo: o numero1 guarda o menor número da lista e o numero2 o maior. 
+//-10
+//1590
 
 //Exercícios de Lógica de Programação
 //1
@@ -76,7 +78,7 @@
 
 //4
 // function exercicio4 (a, b, c){
-//     if(a == b && b==c){
+//     if(a == b && b == c){
 //         return 'Equilátero'
 //     } else if (a == b || b == c || a == c){
 //         return 'Isósceles'
@@ -106,31 +108,37 @@
 //         console.log(`O ${num2} não é divisível por ${num1}`)
 //     }
 
-//     if (num1 > num2){
-//         console.log(`A diferença entre eles é`, num1-num2)
-//     } else {
-//         console.log(`A diferença entre eles é`, num2-num1)
-//     }
+//     console.log(`A diferença entre eles é`, Math.abs(num1 - num2))
 // }
-// console.log(exercicio5(5, 20))
+// (exercicio5(5, 20))
 
 //Exercícios de Funções
-//1
+// 1
 // const array = [10, 20, 30, 70, 40, 50, 100, 60, 90, 80]
 
-// let primeiro = array[0] 
-// let segundo = array[0]
+// let primeiroMaior = -Infinity 
+// let segundoMaior = -Infinity
+// let primeiroMenor = Infinity
+// let segundoMenor = Infinity
 
 // function exercicio1 (array){
 //     for(let i=0; i<array.length; i++){
-//         if (array[i] > primeiro){
-//             segundo = primeiro
-//             primeiro = array[i]
-//         } else if (array[i] > segundo) {
-//             segundo = array[i]
+//         if (array[i] > primeiroMaior){
+//             segundoMaior = primeiroMaior
+//             primeiroMaior = array[i]
+//         } else if (array[i] > segundoMaior) {
+//             segundoMaior = array[i]
+//         }
+
+//         if (array[i] < primeiroMenor){
+//             segundoMenor = primeiroMenor
+//             primeiroMenor = array[i]
+//         } else if (array[i] < segundoMenor) {
+//             segundoMenor = array[i]
 //         }
 //     }
-//     return segundo
+//     console.log(segundoMaior)
+//     console.log(segundoMenor)
 // }
 // console.log(exercicio1(array))
 
@@ -142,4 +150,47 @@
 // exercicio2();
 
 
+//Exercícios de Objetos
+//1 
+// Objetos são estruturas que permite representar dados complexos de forma organizada. Devemos usar essas  estruturas para armazenar dados e funcionalidades relacionadas.
 
+//2
+// function criaRetangulo (lado1, lado2) {
+//     const retangulo = {
+//         largura: lado1,
+//         altura: lado2,
+//         perimetro: 2 * Number(lado1 + lado2),
+//         area: Number(lado1) * Number(lado2)
+//     }
+//     return retangulo
+// }
+// console.log(criaRetangulo(5, 10))
+
+//3
+// function filmeFavorito () {
+//     const filme = {
+//         titulo: 'Três vezes amor',
+//         ano: 2008,
+//         diretor: 'Adam Brooks',
+//         atores: ['Ryan Reynolds', 'Adam Ferrara', 'Isla Fisher', 'Rachel Weisz']
+//     }
+//     console.log(`Venha assistir ao filme ${filme.titulo}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ` + filme.atores)
+// }
+// filmeFavorito()
+
+//4
+// const pessoa = {
+//     nome: 'Rafael Nadal',
+//     idade: 34,
+//     email: 'rafaelnadal@rf.com',
+//     endereco: 'Alguma rua na Espanha'
+// }
+
+// function anonimizarPessoa () {
+//     const anonimo = {
+//         ...pessoa,
+//         nome: 'Anônimo'
+//     }
+//     console.log(anonimo)
+// }
+// anonimizarPessoa()
