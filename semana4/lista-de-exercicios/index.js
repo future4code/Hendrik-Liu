@@ -194,3 +194,147 @@
 //     console.log(anonimo)
 // }
 // anonimizarPessoa()
+
+//Exercicios de Funções de Array
+//1a
+// const pessoas = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// const adultos = pessoas.filter((pessoa, index, array) => {
+//     return pessoa.idade >= 20
+// })
+// console.log(adultos)
+
+//b
+// const pessoas = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// const criancasAdolescentes = pessoas.filter((pessoa, index, array) => {
+//     return pessoa.idade < 20
+// })
+// console.log(criancasAdolescentes)
+
+//2.a)
+// const array = [1, 2, 3, 4, 5, 6]
+
+// const multiplica2 = array.map ((numero) => {
+//     return numero * 2
+// })
+
+// console.log(multiplica2)
+
+//b
+// const array = [1, 2, 3, 4, 5, 6]
+// const multiplica3 = array.map ((numero) => {
+//     return numero*3 
+// }).map((numero) => {
+//     return numero.toString()
+// })
+
+// console.log(multiplica3)
+
+//c
+// const array = [1, 2, 3, 4, 5, 6]
+// const parImpar = array.map((numero) => {
+//     if (numero % 2 == 0){
+//         return `${numero} é par`
+//     } else {
+//         return `${numero} é ímpar`
+//     }
+// })
+
+// console.log(parImpar)
+
+//3.a
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ]
+
+// const entradaOk = pessoas.filter((pessoa) => {
+//     return (pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura >= 1.5)
+// })
+
+// console.log(entradaOk)
+
+//b
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ]
+
+// const entradaNaoOk = pessoas.filter((pessoa) => {
+//     return !(pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura >= 1.5)
+// })
+
+// console.log(entradaNaoOk)
+
+//4
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+
+// const consultasNaoCanceladas = consultas.filter((consulta) => {
+//     return !(consulta.cancelada)
+// }).map((consulta) => {
+//     if(consulta.genero === "masculino"){
+//         return `Olá, Sr. ${consulta.nome}. Estamos enviando esta mensagem para lembrá-lo da sua consulta no dia ${consulta.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`
+//     }
+//     else {
+//         return `Olá, Sra. ${consulta.nome}. Estamos enviando esta mensagem para lembrá-la da sua consulta no dia ${consulta.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.` 
+//     }
+// })
+
+// console.log(consultasNaoCanceladas)
+
+// const consultasCanceladas = consultas.filter((consulta) => {
+//     return (consulta.cancelada)
+// }).map((consulta) => {
+//     if(consulta.genero === "masculino"){
+//         return `Olá, Sr. ${consulta.nome}. Infelizmente, sua consulta marcada para o dia ${consulta.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`
+//     }
+//     else {
+//         return `Olá, Sra. ${consulta.nome}. Infelizmente, sua consulta marcada para o dia ${consulta.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`
+//     }
+// })
+
+// console.log(consultasCanceladas)
+
+//5
+// const contas = [
+// 	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+// 	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+// 	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+// 	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+// 	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+// 	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+// ]
+
+// let totalCompras = 0
+// contas.forEach((conta) => {
+//     for (let compra of conta.compras) {
+//         totalCompras += compra
+//     }
+//     conta.saldoTotal -= totalCompras
+// })
+
+// console.log(contas)
