@@ -16,11 +16,13 @@ class FormPage extends React.Component {
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users", body, { 
       headers: {
         Authorization: "hendrik-liu-dumont"
-      }
-      }).then((response) => {
+      }})
+      
+      .then((response) => {
         this.setState({ userValue: "", emailValue: "" });
-        alert("Usuário cadastrado com sucesso.");
-      }).catch((error) => {
+        alert("Usuário cadastrado com sucesso.")})
+      
+        .catch((error) => {
         alert("Falha no cadastro.");
         console.log(error.message)
       })
