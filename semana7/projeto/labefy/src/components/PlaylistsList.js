@@ -1,9 +1,16 @@
 import React from 'react';
 import axios from 'axios';
-
+import AddTrackToPLaylist from './AddTrackToPlaylist'
 class PlaylistsList extends React.Component {
   state = {
-    playlists: []
+    playlists: [],
+    addTrack: false
+  }
+
+  addTrack = () => {
+    this.setState({addTrack: !false})
+    
+
   }
 
   componentDidMount = () => {
@@ -26,6 +33,22 @@ class PlaylistsList extends React.Component {
     })
   }
 
+  deletePlaylist = (playlistId) => {
+    const confirm = window.confirm("Deseja excluir essa playlist?")
+
+    if(confirm){
+      axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}`, {
+        headers: {
+          Authorization: 'hendrik-liu-dumont'
+        }
+      }).then((response) => {
+        alert("Playlist excluída com sucesso")
+      }).catch((error) => {
+        console.lot(error.message)
+      })
+    }
+  }
+
   render(){
     return(
       <div>
@@ -34,7 +57,10 @@ class PlaylistsList extends React.Component {
           return (
             <div>
               <p key={playlist.id}> {playlist.name} </p>
-              <button> Excluir </button>
+              <button onClick={() => this.deletePlaylist(playlist.id)}> Excluir </button>
+              <button onClick={this.addTrack}>Adicionar música</button>
+              
+              <AddTrackToPLaylist playlistId={playlist.id} />
             </div>
           )
         })}
