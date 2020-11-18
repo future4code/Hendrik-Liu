@@ -8,13 +8,13 @@ const HomePage = () => {
     history.push("/login")
   }
 
-  const goToTripsListPage = () => {
-    history.push("/tripslist")
+  const goToFormPage = () => {
+    history.push("/aplication-form")
   }
 
   return (
     <div>
-      <button onClick={goToTripsListPage}>Ir para página de Viagens</button>
+      <button onClick={goToFormPage}>Quero me candidatar</button>
       <button onClick={goToLoginPage}>Login</button>
     </div>
   )

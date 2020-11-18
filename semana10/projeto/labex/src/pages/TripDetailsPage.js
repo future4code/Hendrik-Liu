@@ -1,9 +1,11 @@
 import React from 'react';
+import useProtectedPage from '../hooks/useProtectedPage'
 
 const TripDetailsPage = () => {
+  useProtectedPage()
   return (
     <div>
-      TripDetailsPage: detalhe de uma viagem.
+      TripDetailsPage
     </div>
   )
 }

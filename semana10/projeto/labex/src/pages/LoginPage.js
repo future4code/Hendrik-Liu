@@ -1,16 +1,52 @@
-import React from 'react';
-import { useHistory} from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom'
 
 const LoginPage = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const history = useHistory()
 
-  const goToAdminPage = () => {
-    history.push('/admin')
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      history.push("/trips/list");
+    }
+    
+  }, [history]);
+
+  const login = () => {  
+    
+    const body = {
+      email: email,
+      password: password
+    }
+
+    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/hendrik-dumont/login", body)
+    .then((response) => {
+      localStorage.setItem("token", response.data.token)
+      history.push("/trips/list")
+    })
+    .catch((error) => {
+      console.log(error)
+    })
   }
+
+  const handleEmail = (event) => {
+    setEmail(event.target.value)
+  }
+
+  const handlePassword = (event) => {
+    setPassword(event.target.value)
+  }
+
   return (
     <div>
-      LoginPage: login como administrador.
-      <button onClick={goToAdminPage}>Login</button>
+      <h2>Login</h2>
+      <input value={email} onChange={handleEmail} placeholder="email" />
+      <input value={password} onChange={handlePassword} placeholder="senha" />
+      <button onClick={login}> Entrar </button>
     </div>
   )
 }

@@ -1,17 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import useProtectedPage from '../hooks/useProtectedPage'
 
 const TripsListPage = () => {
   const history = useHistory()
 
-  const goToFormPage = () => {
-    history.push("/tripslist/form")
+  useProtectedPage()
+  
+  const goToCreateTripPage = () => {
+    history.push("/login/create")
   }
 
   return (
     <div>
-      TripsListPage
-      <button onClick={goToFormPage}>Inscrever</button>
+      <h2>TripsListPage</h2>
+      <button onClick={goToCreateTripPage}>Criar Viagem</button>
     </div>
   )
 }
