@@ -44,7 +44,7 @@ const FormPage = () => {
   }
 
   const getTrips = () => {
-    axios.get ('https://us-central1-labenu-apis.cloudfunctions.net/labeX/hendrik-liu/trips')
+    axios.get ('https://us-central1-labenu-apis.cloudfunctions.net/labeX/hendrik-dumont/trips')
     .then((response) => {
       setGetTripsList(response.data.trips)
     })
@@ -73,7 +73,8 @@ const FormPage = () => {
         value={form.name}
         onChange={handleInputChange} 
         placeholder={"Nome do candidato"}
-        pattern={"(\D{3,}\s*)"}
+        pattern="(\D{3,}\s*)"
+        title="Mínimo 3 letras"
         required
       />
       <input 
@@ -83,6 +84,7 @@ const FormPage = () => {
         onChange={handleInputChange} 
         placeholder={"Idade"}
         min={"18"}
+        title="Maior que 18 anos"
         required
       />
       <input 
@@ -91,7 +93,8 @@ const FormPage = () => {
         value={form.applicationText} 
         onChange={handleInputChange} 
         placeholder={"Descrição"}
-        pattern={"\D{30,}\s*"}
+        pattern={"[A-Za-z]{30,}"}
+        title="Mínimo 30 caracteres"
         required
       />
       <input 
@@ -100,7 +103,8 @@ const FormPage = () => {
         value={form.profession} 
         onChange={handleInputChange} 
         placeholder={"Profissão"}
-        pattern={"\D{10,}\s*"}
+        pattern="\D{10,}\s*"
+        title="Mínimo 10 caracteres"
         required
         />
       <input 
@@ -111,7 +115,18 @@ const FormPage = () => {
         placeholder={"País"}
         required
       />
-
+      <select
+        name={"trip"}
+        value={form.trip}
+        onChange={handleInputChange}
+        required
+      >
+        {getTripsList.map((trip) => {
+          return(
+            <option key={trip.id}>{trip.name} - {trip.planet}</option>
+          )
+        })}
+      </select>
       <button>Inscrever</button>
     </form>
   )
