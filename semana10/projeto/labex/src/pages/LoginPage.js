@@ -44,8 +44,8 @@ const LoginPage = () => {
   return (
     <div>
       <h2>Login</h2>
-      <input value={email} onChange={handleEmail} placeholder="email" />
-      <input value={password} onChange={handlePassword} placeholder="senha" />
+      <input type="email" value={email} onChange={handleEmail} placeholder="email" required/>
+      <input type="password" value={password} onChange={handlePassword} placeholder="senha" required/>
       <button onClick={login}> Entrar </button>
     </div>
   )
