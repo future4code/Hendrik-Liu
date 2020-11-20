@@ -93,7 +93,7 @@ const FormPage = () => {
         value={form.applicationText} 
         onChange={handleInputChange} 
         placeholder={"Descrição"}
-        pattern={"[A-Za-z]{30,}"}
+        pattern={'[A-z0-9À-ž\s]{3,}'}
         title="Mínimo 30 caracteres"
         required
       />
@@ -107,14 +107,17 @@ const FormPage = () => {
         title="Mínimo 10 caracteres"
         required
         />
-      <input 
-        type={"text"}
+      <select
         name={"country"}
-        value={form.country} 
+        value={form.country}
         onChange={handleInputChange}
-        placeholder={"País"}
         required
-      />
+      >
+        <option>Brasil</option>
+        <option>Canadá</option>
+        <option>Estados Unidos</option>
+        <option>Espanha</option>
+      </select>
       <select
         name={"trip"}
         value={form.trip}
