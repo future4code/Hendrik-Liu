@@ -18,7 +18,7 @@ const CreateTripPage = () => {
 
     axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/hendrik-dumont/trips', body, {
       headers: {
-        Authorization: localStorage.getItem("token")
+        auth: localStorage.getItem("token")
       }
     })
     .then((response) => {
@@ -35,7 +35,7 @@ const CreateTripPage = () => {
     planet: "",
     date: "",
     description: "",
-    durationInDays: 0,
+    durationInDays: 0
   })
 
   const handleInputChange = (event) => {
@@ -58,7 +58,7 @@ const CreateTripPage = () => {
         value={form.name}
         onChange={handleInputChange}
         pattern="(\D{3,}\s*)"
-        placeholder={"nome"}
+        placeholder="nome"
         title="Mínimo 3 letras" 
         required
       />
@@ -95,7 +95,7 @@ const CreateTripPage = () => {
         value={form.description}
         onChange={handleInputChange}
         pattern="\D{30,}\s*"
-        placeholder={"descrição"}
+        placeholder="descrição"
         title="Mínimo 30 letras"
         required 
       />
