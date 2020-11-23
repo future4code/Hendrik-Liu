@@ -2,6 +2,31 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import useForm from '../hooks/useForm';
+import styled from 'styled-components'
+
+const FormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > input {
+    margin-left: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+
+  > select {
+    margin-left: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+
+  > button {
+    padding: 10px;
+    width: 100px;
+    margin-top: 20px; 
+  }
+`
 
 const FormPage = () => {
   const history = useHistory()
@@ -65,7 +90,7 @@ const FormPage = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <FormContainer onSubmit={handleSubmit}>
       <h2>Formulário</h2>
       <input 
         type={"text"} 
@@ -131,7 +156,7 @@ const FormPage = () => {
         })}
       </select>
       <button>Inscrever</button>
-    </form>
+    </FormContainer>
   )
 }
 
