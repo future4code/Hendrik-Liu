@@ -1,33 +1,33 @@
 ### EXERCICIO 1
-a) Exclui a coluna salary da tabela Actor
+*a) Exclui a coluna salary da tabela Actor
 ```
 ALTER TABLE Actor DROP COLUMN salary;
 ```
 
-b) Na tabela Actor, altera o nome da coluna gender para sex do tipo VARCHAR(6)  
+*b) Na tabela Actor, altera o nome da coluna gender para sex do tipo VARCHAR(6)  
 ```
 ALTER TABLE Actor CHANGE gender sex VARCHAR(6);
 ```
 
-c) Na tabela Actor, altera o tipo da coluna gender para VARCHAR(255)
+*c) Na tabela Actor, altera o tipo da coluna gender para VARCHAR(255)
 ```
 ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
 ```
 
-d) 
+*d) 
 ```
 ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
 ```
 
 ### EXERCICIO 2
-a) Escreva uma query que atualize o nome e a data de nascimento do ator com o id `003`
+*a) Escreva uma query que atualize o nome e a data de nascimento do ator com o id `003`
 ```
 UPDATE Actor
 SET name = "Caio Castro", birth_date = "1990-10-25" 
 WHERE id = "004";
 ```
 
-b. Escreva uma query que atualize o nome da atriz `Juliana Paes` para `JULIANA PÃES`. Então, escreva outra query para voltar ao nome anterior.
+*b. Escreva uma query que atualize o nome da atriz `Juliana Paes` para `JULIANA PÃES`. Então, escreva outra query para voltar ao nome anterior.
 ```
 UPDATE Actor
 SET name = "JULIANA PÃES" 
@@ -38,7 +38,7 @@ SET name = "Juliana Paes"
 WHERE id = "005";
 ```
 
-c. Escreva uma query que atualize todas as informações do ator com o id `005`*
+*c. Escreva uma query que atualize todas as informações do ator com o id `005`*
 ```
 UPDATE Actor
 SET 
@@ -49,7 +49,7 @@ gender = "female"
 WHERE id = "005";
 ```
 
-d. Escreva uma query em que você tente atualizar um dado da tabela que não existe (com um id inválido, por exemplo). Teste, anote e explique o resultado.*
+*d. Escreva uma query em que você tente atualizar um dado da tabela que não existe (com um id inválido, por exemplo). Teste, anote e explique o resultado.*
 ```
 UPDATE Actor SET salary = 1000000 WHERE id = "999"	
 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0	0.016 sec
@@ -113,9 +113,89 @@ SELECT AVG(salary), gender FROM Actor GROUP BY gender;
 ```
 
 ### EXERCICIO 6
+*a. Altere a tabela de `Movie` e adicione um novo parâmetro: `playing_limit_date` que indique a data limite em que o filme será passado no cinema.* 
+```
+ALTER TABLE Movie ADD playing_limit_date DATE;
+```
 
+*b. Altere a tabela de `Movie` para que o parâmetro `rating` possa aceitar valores não inteiros, como, por exemplo, uma avaliação `8.5`.*
+```
+ALTER TABLE Movie CHANGE rating rating FLOAT NOT NULL;
+```
 
+*c. Atualize dois filmes de tal forma que tenhamos um que ainda esteja em cartaz e um que já tenha saído*
+```
+UPDATE Movie
+SET playing_limit_date = '2007-03-06'
+WHERE id = '001';
 
+UPDATE Movie
+SET playing_limit_date = '2022-01-01'
+WHERE id = '002';
+```
+
+*d. Delete algum dos filmes, mas guarde o id. Tente fazer uma query para atualizar a sinopse desse filme que você acabou de deletar (usando o mesmo id). Anote o resultado e explique.*
+```
+DELETE FROM Movie WHERE id = "003";
+```
+O banco retorna que a query foi realizada, mas nenhuma das linhas foram afetadas.
+
+### EXERCICIO 7
+*a. Quantos filmes em cartaz possuem avaliações maiores do que `7.5`?*
+```
+SELECT COUNT(*) FROM Movie WHERE rating > 7.5;
+```
+
+*b. Qual a média das avaliações dos filmes?*
+```
+SELECT AVG(rating) FROM Movie;
+```
+
+*c. Qual a quantidade de filmes em cartaz?*
+```
+SELECT COUNT(*) FROM Movie WHERE playing_limit_date > CURDATE();
+```
+
+*d. Qual a quantidade de filmes que ainda irão lançar?*
+```
+SELECT COUNT(*) FROM Movie WHERE release_date > CURDATE();
+```
+
+*e. Qual a maior nota dos filmes?*
+```
+SELECT MAX(rating) FROM Movie;
+```
+
+*f. Qual a menor nota dos filmes?*
+```
+SELECT MIN(rating) FROM Movie;
+```
+
+### EXERCICIO 8
+*a. Retorne todos os filmes em ordem alfabética*
+```
+SELECT * FROM Movie ORDER BY title;
+```
+
+*b. Retorne os 5 primerios filmes em ordem descrente alfabética* 
+```
+SELECT * FROM Movie ORDER BY title DESC LIMIT 5;
+```
+
+*c. Retorne os 3 filmes mais recentes em cartaz*
+```
+SELECT * FROM Movie 
+WHERE release_date < CURDATE() 
+ORDER BY release_date DESC 
+LIMIT 3;
+```
+
+*d. Retorne os 3 filmes melhor avalidos*
+```
+SELECT * FROM Movie 
+ORDER BY rating DESC 
+LIMIT 3
+```
 
 
 
