@@ -17,6 +17,7 @@ export const performAttack = (
     defender: Character,
     validator: (input: Character) => boolean
 ) => {
+  
     if (!validator(attacker) || !validator(defender)) {
       throw new Error("Invalid character");
     }
